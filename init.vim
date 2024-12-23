@@ -21,6 +21,7 @@ call plug#begin()
  Plug 'simrat39/rust-tools.nvim'
  Plug 'nvim-telescope/telescope.nvim'
  Plug 'nvim-lua/plenary.nvim'
+ Plug 'kassio/neoterm'
 call plug#end()
 
 "Latex configuration.
@@ -34,6 +35,7 @@ map <C-l> \ll<CR>
 map <C-n> :NERDTree<CR> 
 
 "General configuration.
+set autochdir
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching
 set ignorecase              " case insensitive 
@@ -86,7 +88,7 @@ function Toggle()
 if winnr("$")==1
     split 
     resize 10
-    terminal
+    :Tclear
     set modifiable
     call timer_start(1000, { tid -> execute('normal i')})
 else 
@@ -218,7 +220,7 @@ vim.diagnostic.config({
 })
 
 --Toggle Diagnostic window
-vim.keymap.set('n', '<c-i>', function()
+vim.keymap.set({'n', 'v', 'i'}, '<c-i>', function()
 -- If we find a floating window, close it.
     local found_float = false
     for _, win in ipairs(vim.api.nvim_list_wins()) do
