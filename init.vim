@@ -22,6 +22,7 @@ call plug#begin()
  Plug 'nvim-telescope/telescope.nvim'
  Plug 'nvim-lua/plenary.nvim'
  Plug 'kassio/neoterm'
+ Plug 'JuliaEditorSupport/julia-vim'
 call plug#end()
 
 "Latex configuration.
@@ -107,7 +108,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {'pyright','texlab','clangd','rust_analyzer'}
+local servers = {'pyright','texlab','clangd','rust_analyzer','julials'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
