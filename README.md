@@ -17,7 +17,8 @@ I have setup neovim clipboard for wayland using wl-clipboard. X users have to ge
 6.texlab (optional: Not needed if you do not want language support (tab-complete) for latex)<br>
 7.clangd (optional: Not needed if you do not want language support (tab-complete) for c/cpp)<br>
 8.rust-analyzer (optional: Not needed if you do not want language support (tab-complete) for rust)<br>
-6.okular pdf viewer (optional: you can modify the config file easily to accomodate for other pdf viewers for writing latex)
+9.okular pdf viewer (optional: you can modify the config file easily to accomodate for other pdf viewers for writing latex)
+10.Typst (optional: Not needed if you do not intend to use typst.)
 </p>
 <br><br>
 <h2>Usage</h2>
