@@ -23,6 +23,7 @@ call plug#begin()
  Plug 'nvim-lua/plenary.nvim'
  Plug 'kassio/neoterm'
  Plug 'JuliaEditorSupport/julia-vim'
+ Plug 'kaarmu/typst.vim'
 call plug#end()
 
 "Latex configuration.
@@ -82,7 +83,7 @@ let g:indentLine_setConceal = 1
 let g:indentLine_concealcurser = "inc"
 let g:indentLine_conceallevel = 2
 let g:indentLine_char = '|'
-
+let g:typst_pdf_viewer = 'okular'
 
 
 function Toggle()
@@ -108,7 +109,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {'pyright','texlab','clangd','rust_analyzer','julials'}
+local servers = {'pyright','texlab','clangd','rust_analyzer','julials','tinymist'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     -- on_attach = my_custom_on_attach,
@@ -201,14 +202,17 @@ local sign = function(opts)
   })
 end
 
-sign({name = 'DiagnosticSignError', text = '❤'})
-sign({name = 'DiagnosticSignWarn', text = ''})
-sign({name = 'DiagnosticSignHint', text = ''})
-sign({name = 'DiagnosticSignInfo', text = ''})
 
 vim.diagnostic.config({
     virtual_text = false,
-    signs = true,
+    signs = {
+        text = {
+            [vim.diagnostic.severity.ERROR] = "❤",
+            [vim.diagnostic.severity.WARN]  = "",
+            [vim.diagnostic.severity.INFO]  = "",
+            [vim.diagnostic.severity.HINT]  = "",
+        },
+    },
     update_in_insert = true,
     underline = true,
     severity_sort = false,
