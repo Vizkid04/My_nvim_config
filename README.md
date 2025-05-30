@@ -3,6 +3,7 @@
 <h1>My neovim configuration.</h1>
 <br><br>
 <h2>Notice for X-server users</h2>
+<br><br>
 I have setup neovim clipboard for wayland using wl-clipboard. X users have to get rid of lines 60-69 (inclusive) from the init.vim file which defines the clipboard setup for wayland. X users may instead use the equivalent X clipboard setup offered by their respective linux distributions. 
 <br><br>
 <h2>Requirements for full functionality</h2>
