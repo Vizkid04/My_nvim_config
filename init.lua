@@ -38,15 +38,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 
--- LSP Diagnostics Options Setup 
-local sign = function(opts)
-  vim.fn.sign_define(opts.name, {
-    texthl = opts.name,
-    text = opts.text,
-    numhl = ''
-  })
-end
-
+-- LSP Diagnostics Options Setup
 vim.diagnostic.config({
     virtual_text = false,
     signs = {
