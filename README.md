@@ -6,22 +6,26 @@
 <br><br>
 <p>
 1.Neovim 0.9 or above<br>
-2.vim-plug<br>
+2.Lazy plugin management<br>
 3.texlive full suite<br>
-4.Rust standard libraries (optional: Not needed if you do not want rust tabcomplete)<br>
-5.pyright (optional: Not needed if you do not want language support (tab-complete) for python)<br>
-6.texlab (optional: Not needed if you do not want language support (tab-complete) for latex)<br>
-7.clangd (optional: Not needed if you do not want language support (tab-complete) for c/cpp)<br>
-8.rust-analyzer (optional: Not needed if you do not want language support (tab-complete) for rust)<br>
-6.okular pdf viewer (optional: you can modify the config file easily to accomodate for other pdf viewers for writing latex)
+4.Rust standard libraries (optional: Not needed if you do not want rust autosuggestions for completion)<br>
+5.basedpyright (optional: Not needed if you do not want language support (autosuggestions for completion) for python)<br>
+6.texlab (optional: Not needed if you do not want language support (autosuggestions for completion) for latex)<br>
+7.clangd (optional: Not needed if you do not want language support (autosuggestions for completion) for c/cpp)<br>
+8.rust-analyzer (optional: Not needed if you do not want language support (autosuggestions for completion) for rust)<br>
+9. fortls (optional: Not needed if you do not want language support (autosuggestions for completion) for Fortran)<br>
+10. julials (optional: Not needed if you do not want language support (autosuggestions for completion) for julia)<br>
+11. tinymist (optional: Not needed if you do not want language support (autosuggestions for completion) for typst)<br>
+12.okular pdf viewer (optional: you can modify the config file easily to accomodate for other pdf viewers for writing latex)
 </p>
 <br><br>
 <h2>Usage</h2>
 <br><br>
 <p>
 1.Clone the repository into ~/.config and rename the newly created directory to "nvim"<br>
-2.Open init.vim using nvim<br>
-3.Run :PlugInstall (Note: you might have to save close and reopen init.vim for :PlugInstall to actually download the necessary plugins (Pay attention to the output of :PlugInstall to confirm successful installation of necessary plugins))
+2. Create your equivalent preamble files corresponding to paths referenced in after/ftplugin/c.vim and after/ftplugin/tex.vim and change the existing paths to match the paths of your newly created preamble files accordingly.
+3.Open init.vim using nvim<br>
+4.Run :Lazy and (I)nstall all plugins.
 </p>
 <br><br>
 <h2>Credits</h2>
@@ -36,4 +40,5 @@ I have modified Gilles Castel's ultisnip syntaxed snippet file to a luasnip synt
 <p>
 1.Adding latex inkscape support.<br>
 2.Making pgfplots and tikz libraries' latex workflow incredibly fast.
+3. Improving the typst setup to make workflow robust, efficient and easy.
 </p>

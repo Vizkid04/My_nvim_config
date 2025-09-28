@@ -23,7 +23,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
     local success = vim.lsp.start({
       name = "juls",
-      cmd = {"/home/vizkid/Documents/Rust/juls/target/debug/juls"},
+      cmd = {"/home/$USER/Documents/Rust/juls/target/debug/juls"},
       root_dir = root,
       filetypes = {"julia"},
       on_attach = function(client, bufnr)
