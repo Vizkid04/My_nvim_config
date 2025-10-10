@@ -4,13 +4,8 @@ return {
         version = 'v2.*',
         config = function()
             require("luasnip.loaders.from_lua").lazy_load({ paths = "~/.config/nvim/LuaSnip/" })
-
-            require("luasnip").config.set_config({ -- Setting LuaSnip config
-
-                -- Enable autotriggered snippets
+            require("luasnip").config.set_config({
                 enable_autosnippets = true,
-
-                -- Use Tab (or some other key if you prefer) to trigger visual selection
                 store_selection_keys = "<C-y>",
                 update_events = 'TextChanged,TextChangedI',
             })

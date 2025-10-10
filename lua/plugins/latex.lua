@@ -2,20 +2,6 @@ return {
     {
         "lervag/vimtex",
         config = function()
-            vim.api.nvim_create_autocmd("FileType", {
-                pattern = "tex",
-                callback = function()
-                    local project = vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-                    local socket = "/tmp/nvim-" .. project .. "-" .. vim.fn.getpid()
-                    if vim.v.servername == "" then
-                        vim.fn.serverstart(socket)
-                        print("Neovim server started at: " .. socket)
-                    end
-                    vim.g.vimtex_nvr_socket = vim.v.servername ~= "" and vim.v.servername or socket
-                    vim.keymap.set("n", "<C-l>", "<cmd>VimtexCompile<CR>", { buffer = true, silent = true })
-                    vim.keymap.set("n", "<leader>lv", "<cmd>VimtexView<CR>", { buffer = true, silent = true })
-                end,
-            })
             vim.g.vimtex_view_method = "general"
             vim.g.vimtex_view_general_viewer = "okular"
             vim.g.vimtex_view_general_options = "--unique file:@pdf\\#src:@line@tex"

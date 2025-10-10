@@ -4,9 +4,7 @@ return {
         event = "InsertEnter",
         config = true,
         opts = {
-            disable_filetype = { "tex" }, -- disable in TeX buffers
+            disable_filetype = { "tex" },
         }
-        -- use opts = {} for passing setup options
-        -- this is equivalent to setup({}) function
     }
 }
