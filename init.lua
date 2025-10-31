@@ -8,7 +8,11 @@ vim.lsp.enable({
     'tinymist',
     'basedpyright',
     'rust_analyzer',
-    'fortls'
+    'fortls',
+    'vscode_html',
+    'vscode_css',
+    'vscode_json',
+    'typescript'
 })
 
 vim.api.nvim_create_autocmd("FileType", {
