@@ -15,6 +15,15 @@ vim.lsp.enable({
     'typescript'
 })
 
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+  pattern = "*.md",
+  callback = function()
+    if vim.wo.conceallevel ~= 0 then
+      vim.wo.conceallevel = 0
+    end
+  end,
+})
+
 vim.api.nvim_create_autocmd("FileType", {
     pattern = "tex",
     callback = function()
