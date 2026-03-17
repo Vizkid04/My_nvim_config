@@ -17,7 +17,7 @@ My neovim configuration.
 
 # Requirements for full functionality
 + Neovim 0.9 or above
-+ Lazy plugin managemen
++ Lazy plugin management
 + texlive full suite
 + Rust standard libraries (optional: not needed if you do not want to write code in rust)
 + basedpyright (optional: not needed if you do not want language support for python)
