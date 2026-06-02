@@ -8,7 +8,7 @@ My neovim configuration.
 # Usage
 + Clone the repository into ~/.config and rename the newly created directory to "nvim".
 + Create your equivalent preamble files corresponding to paths referenced in after/ftplugin/c.vim and after/ftplugin/tex.vim and change the existing path definitions in those files to match the paths of your newly created preamble files accordingly.
-+ Open init.vim using nvim
++ Open init.lua using nvim
 + Run :Lazy and (I)nstall all plugins.
 
 # Preview

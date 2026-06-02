@@ -11,7 +11,6 @@ cmd('set softtabstop=4')           --see multiple spaces as tabstops so <BS> doe
 cmd('set expandtab')               -- converts tabs to white space
 cmd('set shiftwidth=4')            --width for autoindents
 cmd('set autoindent')              -- indent a new line the same amount as the line just typed
-cmd('set number relativenumber')   --add line numbers
 cmd('syntax on')                   -- syntax highlighting
 cmd('set mouse=a')                 -- enable mouse click
 cmd('set clipboard=unnamedplus')   --using system clipboard

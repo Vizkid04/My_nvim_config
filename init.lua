@@ -1,5 +1,10 @@
 require("config.lazy")
 require("config.basic")
+
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.statuscolumn = "%s%=%{v:lnum}  %{v:relnum} "
+
 -- LSP SETUP
 vim.lsp.enable({
     'luals',
