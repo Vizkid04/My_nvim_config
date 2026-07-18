@@ -1,3 +1,7 @@
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 require("config.lazy")
 require("config.basic")
 
@@ -20,12 +24,10 @@ vim.lsp.enable({
     'typescript'
 })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
-  pattern = "*.md",
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
   callback = function()
-    if vim.wo.conceallevel ~= 0 then
-      vim.wo.conceallevel = 0
-    end
+    vim.wo.conceallevel = 0
   end,
 })
 
@@ -57,7 +59,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
     local success = vim.lsp.start({
       name = "juls",
-      cmd = {"/home/$USER/Documents/Rust/juls/target/debug/juls"},
+      cmd = {vim.fn.expand("~/Documents/Rust/juls/target/debug/juls")},
       root_dir = root,
       filetypes = {"julia"},
       on_attach = function(client, bufnr)
